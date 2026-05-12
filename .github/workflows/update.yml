@@ -14,19 +14,33 @@ jobs:
 
       - name: Download and Convert
         run: |
+          # 设置当前时间（格式：yyyy-MM-dd HH:mm）
+          now=$(date +'%Y-%m-%d %H:%M')
+        
           # 定义需要转换的文件列表
           files=("accelerated-domains.china.conf" "google.china.conf" "apple.china.conf")
           
           for file in "${files[@]}"; do
-            # 1. 下载原始文件
+            # 下载原始文件
             curl -sSL "https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/$file" -o "$file"
             
-            # 2. 完全复刻 Makefile 的 raw 提取逻辑 
-            # 提取域名并过滤注释和空行
+            # 提取纯域名
+            # 复刻 Makefile 逻辑：匹配 server=/.../114.114.114.114 并过滤注释/空行
             sed -e 's|^server=/\(.*\)/114.114.114.114$|\1|' "$file" | grep -Ev -e '^#' -e '^$' > "temp_raw.txt"
+
+            # 获取规则行数和最终文件名
+            count=$(wc -l < "temp_raw.txt")
+            final_filename="${file%.conf}.list"
             
-            # 3. 转换为 Shadowrocket 格式 (DOMAIN-SUFFIX,域名,DIRECT)
-            sed -e 's|\(.*\)|DOMAIN-SUFFIX,\1,DIRECT|' "temp_raw.txt" > "${file%.conf}.list"
+            # 组装 Header 和内容
+            {
+              echo "#!name=$final_filename"
+              echo "#!homepage=https://github.com/OriginVorfeed/shadowrocket-china-list"
+              echo "#!desc=Rules:$count Created:$now Publisher:OriginVorfeed"
+              echo "[Rule]"
+              # 转换为 Shadowrocket 格式 (DOMAIN-SUFFIX,域名,DIRECT)
+              sed -e 's|\(.*\)|DOMAIN-SUFFIX,\1,DIRECT|' "temp_raw.txt"
+            } > "$final_filename"
             
             # 清理中间文件
             rm "$file" "temp_raw.txt"
