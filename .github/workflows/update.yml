@@ -1,0 +1,42 @@
+name: Update Shadowrocket Rules
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # 每天凌晨自动运行
+  workflow_dispatch: # 支持手动触发
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Download and Convert
+        run: |
+          mkdir -p rules
+          # 定义需要转换的文件列表
+          files=("accelerated-domains.china.conf" "google.china.conf" "apple.china.conf")
+          
+          for file in "${files[@]}"; do
+            # 1. 下载原始文件
+            curl -sSL "https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/$file" -o "$file"
+            
+            # 2. 完全复刻 Makefile 的 raw 提取逻辑 
+            # 提取域名并过滤注释和空行
+            sed -e 's|^server=/\(.*\)/114.114.114.114$|\1|' "$file" | grep -Ev -e '^#' -e '^$' > "temp_raw.txt"
+            
+            # 3. 转换为 Shadowrocket 格式 (DOMAIN-SUFFIX,域名,DIRECT)
+            sed -e 's|\(.*\)|DOMAIN-SUFFIX,\1,DIRECT|' "temp_raw.txt" > "rules/${file%.conf}.list"
+            
+            # 清理中间文件
+            rm "$file" "temp_raw.txt"
+          done
+
+      - name: Git push
+        run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Action"
+          git add rules/*.list
+          git commit -m "Update rules: $(date)" || exit 0
+          git push
