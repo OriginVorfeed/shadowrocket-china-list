@@ -1,3 +1,7 @@
+#!name=accelerated-domains.china.list
+#!homepage=https://github.com/OriginVorfeed/shadowrocket-china-list
+#!desc=Rules:113342 Created:2026-05-12 10:49 Publisher:OriginVorfeed
+[Rule]
 DOMAIN-SUFFIX,0.xn--czrs0t,DIRECT
 DOMAIN-SUFFIX,0.xn--unup4y,DIRECT
 DOMAIN-SUFFIX,0.zone,DIRECT
