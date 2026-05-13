@@ -10,7 +10,7 @@
 
 参照dnsmasq-china-list中[Makefile](https://github.com/felixonmars/dnsmasq-china-list/blob/master/Makefile)的逻辑，转换为对应的**小火箭白名单规则**。
 
-每套规则提供二个链接，第一个需要代理才能稳定访问，第二个可以直接访问，但会延迟12小时。
+每套规则提供2个链接，第1个需要代理才能稳定访问，第2个可以直接访问，但会延迟12小时。
 
 - **accelerated-domains.china.list**：
 
