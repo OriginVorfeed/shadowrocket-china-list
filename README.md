@@ -80,6 +80,8 @@
 
   由于模块的优先级高于配置，要覆盖模块中的规则，只能再建一个模块，把需要的规则写在里面，然后把这个新模块移到最上面。
 
+  注意你只有在真正需要**覆盖**模块中的规则时，才需要执行上述操作。如果你只是想添加一些不冲突的规则，直接修改whitelist_base.conf即可。
+
 ## 问题反馈
 
 任何问题欢迎在 [Issues](https://github.com/OriginVorfeed/shadowrocket-china-list/issues) 中反馈。
