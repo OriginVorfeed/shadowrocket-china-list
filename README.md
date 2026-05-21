@@ -2,7 +2,7 @@
 
 你好，欢迎来到Vorfeed的欢乐满满翻墙提高班。
 
-本项目是**自建DNS、浏览器、小火箭**统一分流规则的一部分，通过严格同步[dnsmasq-china-list](https://github.com/felixonmars/dnsmasq-china-list)，保证多端分流规则的一致性。
+本项目是**自建DNS、Xray、小火箭**统一分流规则的一部分，通过严格同步[dnsmasq-china-list](https://github.com/felixonmars/dnsmasq-china-list)，保证多端分流规则的一致性。
 
 其他部分绝赞更新中。
 
