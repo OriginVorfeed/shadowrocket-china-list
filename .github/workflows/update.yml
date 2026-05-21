@@ -37,7 +37,7 @@ jobs:
 
           for file in "${files[@]}"; do
             # 获取规则行数和最终文件名
-            count=$(grep -c -E -v '^\s*(#|$)' "$target_file")
+            count=$(grep -c -E -v '^\s*(#|$)' "$file.raw.txt")
             final_filename="$file.list"
 
             # 组装 Header 和内容
