@@ -4,7 +4,9 @@
 
 本项目是**SmartDNS、Xray、Shadowrocket**统一分流规则的一部分，通过严格同步[dnsmasq-china-list](https://github.com/felixonmars/dnsmasq-china-list)，保证多端分流规则的一致性。
 
-其他部分绝赞更新中。
+- SmartDNS规则：[smartdns-china-list](https://github.com/OriginVorfeed/smartdns-china-list)
+
+- Xray规则：[xray-china-list](https://github.com/OriginVorfeed/xray-china-list)
 
 ## 规则说明
 
