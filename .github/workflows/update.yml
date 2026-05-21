@@ -16,22 +16,26 @@ jobs:
         run: |
           # 设置当前时间（格式：yyyy-MM-dd HH:mm）
           now=$(date +'%Y-%m-%d %H:%M')
-        
+
           # 定义需要转换的文件列表
-          files=("accelerated-domains.china.conf" "google.china.conf" "apple.china.conf")
-          
+          files=("accelerated-domains.china" "google.china" "apple.china")
+
           for file in "${files[@]}"; do
             # 下载原始文件
-            curl -sSL "https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/$file" -o "$file"
-            
-            # 提取纯域名
-            # 复刻 Makefile 逻辑：匹配 server=/.../114.114.114.114 并过滤注释/空行
-            sed -e 's|^server=/\(.*\)/114.114.114.114$|\1|' "$file" | grep -Ev -e '^#' -e '^$' > "temp_raw.txt"
+            curl -sSL "https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/$file.conf" -o "$file.conf"
+          done
 
+          # 下载官方的 Makefile
+          curl -sSL "https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/Makefile" -o "Makefile"
+
+          # 提取纯域名
+          make raw
+
+          for file in "${files[@]}"; do
             # 获取规则行数和最终文件名
-            count=$(wc -l < "temp_raw.txt")
-            final_filename="${file%.conf}.list"
-            
+            count=$(wc -l < "$file.raw.txt")
+            final_filename="$file.list"
+
             # 组装 Header 和内容
             {
               echo "#!name=$final_filename"
@@ -39,11 +43,11 @@ jobs:
               echo "#!desc=Rules:$count Created:$now Publisher:OriginVorfeed"
               echo "[Rule]"
               # 转换为 Shadowrocket 格式 (DOMAIN-SUFFIX,域名,DIRECT)
-              sed -e 's|\(.*\)|DOMAIN-SUFFIX,\1,DIRECT|' "temp_raw.txt"
+              sed -e 's|\(.*\)|DOMAIN-SUFFIX,\1,DIRECT|' "$file.raw.txt"
             } > "$final_filename"
-            
+
             # 清理中间文件
-            rm "$file" "temp_raw.txt"
+            rm "$file.conf" "$file.raw.txt"
           done
 
       - name: Git push
