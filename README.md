@@ -8,7 +8,7 @@
 
 - Xray规则：[xray-china-list](https://github.com/OriginVorfeed/xray-china-list)
 
-- SingBox规则：[xray-china-list](https://github.com/OriginVorfeed/singbox-china-list)
+- SingBox规则：[singbox-china-list](https://github.com/OriginVorfeed/singbox-china-list)
 
 ## 规则说明
 
