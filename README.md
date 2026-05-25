@@ -2,11 +2,13 @@
 
 你好，欢迎来到Vorfeed的欢乐满满翻墙提高班。
 
-本项目是**SmartDNS、Xray、Shadowrocket**统一分流规则的一部分，通过严格同步[dnsmasq-china-list](https://github.com/felixonmars/dnsmasq-china-list)，保证多端分流规则的一致性。
+本项目是**SmartDNS、Xray、Shadowrocket、SingBox**统一分流规则的一部分，通过严格同步[dnsmasq-china-list](https://github.com/felixonmars/dnsmasq-china-list)，保证多端分流规则的一致性。
 
 - SmartDNS规则：[smartdns-china-list](https://github.com/OriginVorfeed/smartdns-china-list)
 
 - Xray规则：[xray-china-list](https://github.com/OriginVorfeed/xray-china-list)
+
+- SingBox规则：[xray-china-list](https://github.com/OriginVorfeed/singbox-china-list)
 
 ## 规则说明
 
