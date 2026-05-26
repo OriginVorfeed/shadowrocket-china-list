@@ -36,10 +36,6 @@
   - [https://raw.githubusercontent.com/OriginVorfeed/shadowrocket-china-list/master/google.china.list](https://raw.githubusercontent.com/OriginVorfeed/shadowrocket-china-list/master/google.china.list)
   - [https://cdn.jsdelivr.net/gh/OriginVorfeed/shadowrocket-china-list@master/google.china.list](https://cdn.jsdelivr.net/gh/OriginVorfeed/shadowrocket-china-list@master/google.china.list)
 
->这套规则没有转换 bogus-nxdomain.china.conf，是因为正确配置的白名单分流，不会解析到 NXDOMAIN。
->
->NXDOMAIN 只有在直连不适合直连的域名时才会出现，而白名单分流时，不适合直连的域名应该直接走代理，不会在本地发生 DNS 查询。
-
 ## 使用方法
 
 - 复制**小火箭白名单基础配置**链接：
