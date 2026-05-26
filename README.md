@@ -14,6 +14,8 @@
 
 参照 dnsmasq-china-list 中 [Makefile](https://github.com/felixonmars/dnsmasq-china-list/blob/master/Makefile) 的逻辑，转换为对应的**小火箭白名单规则**。
 
+具体转换逻辑，请查看 [workflow](https://github.com/OriginVorfeed/shadowrocket-china-list/blob/main/.github/workflows/update.yml)。
+
 每套规则提供2个链接，第1个需要代理才能稳定访问，第2个可以直接访问，但会延迟12小时。
 
 - **accelerated-domains.china.list**：
