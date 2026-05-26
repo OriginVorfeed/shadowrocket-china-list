@@ -23,16 +23,19 @@
   主规则，包含10w多个适合直连的域名。据说以前有性能问题，但现在没什么感觉。
   - [https://raw.githubusercontent.com/OriginVorfeed/shadowrocket-china-list/master/accelerated-domains.china.list](https://raw.githubusercontent.com/OriginVorfeed/shadowrocket-china-list/master/accelerated-domains.china.list)
   - [https://cdn.jsdelivr.net/gh/OriginVorfeed/shadowrocket-china-list@master/accelerated-domains.china.list](https://cdn.jsdelivr.net/gh/OriginVorfeed/shadowrocket-china-list@master/accelerated-domains.china.list)
+
 - **apple.china.list**：
 
   可选规则，推荐使用。Apple 相关域名在国内有 CDN 加速，理论上适合直连。但如果你发现解析到了国外，就不要使用。
   - [https://raw.githubusercontent.com/OriginVorfeed/shadowrocket-china-list/master/apple.china.list](https://raw.githubusercontent.com/OriginVorfeed/shadowrocket-china-list/master/apple.china.list)
   - [https://cdn.jsdelivr.net/gh/OriginVorfeed/shadowrocket-china-list@master/apple.china.list](https://cdn.jsdelivr.net/gh/OriginVorfeed/shadowrocket-china-list@master/apple.china.list)
+
 - **google.china.list**：
 
   可选规则，不推荐使用。你要是发现熟悉的网页上，一些图标突然变成了文字，就是直连 fonts.gstatic.com 不稳定导致的。
   - [https://raw.githubusercontent.com/OriginVorfeed/shadowrocket-china-list/master/google.china.list](https://raw.githubusercontent.com/OriginVorfeed/shadowrocket-china-list/master/google.china.list)
   - [https://cdn.jsdelivr.net/gh/OriginVorfeed/shadowrocket-china-list@master/google.china.list](https://cdn.jsdelivr.net/gh/OriginVorfeed/shadowrocket-china-list@master/google.china.list)
+
 >这套规则没有转换 bogus-nxdomain.china.conf，是因为正确配置的白名单分流，不会解析到 NXDOMAIN。
 >
 >NXDOMAIN 只有在直连不适合直连的域名时才会出现，而白名单分流时，不适合直连的域名应该直接走代理，不会在本地发生 DNS 查询。
