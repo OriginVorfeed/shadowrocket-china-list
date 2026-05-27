@@ -43,14 +43,19 @@
   - [https://cdn.jsdelivr.net/gh/OriginVorfeed/shadowrocket-china-list@master/whitelist_base.conf](https://cdn.jsdelivr.net/gh/OriginVorfeed/shadowrocket-china-list@master/whitelist_base.conf)
   
   任选其一，在 `小火箭 -> 配置` 里添加。注意这个配置里有些关键选项，界面上配不了，但不配又会导致DNS泄露之类的问题。如果你想和已有配置合并，建议使用 `编辑纯文本` 方式比对。
+
 - `小火箭 -> 配置 -> 模块`，按需添加 [规则说明](#规则说明) 里的规则。
+
 - 配置完成，为确保规则正确生效，推荐进行后续的验证操作。
 
 ## 验证配置
 
  - 建议关闭所有后台 APP，以免影响测试结果
+
  - 在 `小火箭 -> 数据 -> DNS` 里，打开 `启用日志记录`
+
  - 确认 `全局路由` 已选择 `配置`，开启代理
+
  - `小火箭 -> 配置 -> 测试规则`，进行以下测试：
    
    HOST | 类型 | 策略
@@ -58,7 +63,7 @@
    baidu.com | DOMAIN-SUFFIX | DIRECT
    x.com | FINAL | PROXY
    223.5.5.5 | GEOIP | DIRECT
-   8.8.8.8 |  FINAL | PROXY
+   8.8.8.8 | FINAL | PROXY
  - 如果使用了Apple规则，额外测试：
    
    HOST | 类型 | 策略
@@ -69,6 +74,7 @@
    HOST | 类型 | 策略
    --- | --- | ---
    fonts.gstatic.com | DOMAIN-SUFFIX | DIRECT
+
  - 检查 DNS 日志记录，测试中用到的域名均**不应该**出现在日志中，否则可能为 DNS 泄露。
 
 ## 常见问题
