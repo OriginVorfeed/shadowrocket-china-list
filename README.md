@@ -1,4 +1,4 @@
-# 🚀 shadowrocket-china-list
+# shadowrocket-china-list
 
 你好，欢迎来到 Vorfeed 的欢乐满满翻墙提高班。
 
