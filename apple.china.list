@@ -1,6 +1,6 @@
 #!name=apple.china.list
 #!homepage=https://github.com/OriginVorfeed/shadowrocket-china-list
-#!desc=Rules:163 Created:2026-06-19 02:50 Publisher:OriginVorfeed
+#!desc=Rules:164 Created:2026-06-20 02:11 Publisher:OriginVorfeed
 [Rule]
 DOMAIN-SUFFIX,a1.mzstatic.com,DIRECT
 DOMAIN-SUFFIX,a2.mzstatic.com,DIRECT
@@ -107,6 +107,7 @@ DOMAIN-SUFFIX,is5.mzstatic.com,DIRECT
 DOMAIN-SUFFIX,itunes-apple.com.akadns.net,DIRECT
 DOMAIN-SUFFIX,itunes.apple.com,DIRECT
 DOMAIN-SUFFIX,itunesconnect.apple.com,DIRECT
+DOMAIN-SUFFIX,mensura.cdn-apple.com,DIRECT
 DOMAIN-SUFFIX,mesu-cdn.apple.com.akadns.net,DIRECT
 DOMAIN-SUFFIX,mesu-china.apple.com.akadns.net,DIRECT
 DOMAIN-SUFFIX,mesu.apple.com,DIRECT
