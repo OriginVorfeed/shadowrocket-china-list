@@ -1,6 +1,6 @@
 #!name=apple.china.list
 #!homepage=https://github.com/OriginVorfeed/shadowrocket-china-list
-#!desc=Rules:165 Created:2026-09-25 02:18 Publisher:OriginVorfeed
+#!desc=Rules:165 Created:2026-09-26 02:23 Publisher:OriginVorfeed
 [Rule]
 DOMAIN-SUFFIX,a1.mzstatic.com,DIRECT
 DOMAIN-SUFFIX,a2.mzstatic.com,DIRECT
