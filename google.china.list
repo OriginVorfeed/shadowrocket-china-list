@@ -1,6 +1,6 @@
 #!name=google.china.list
 #!homepage=https://github.com/OriginVorfeed/shadowrocket-china-list
-#!desc=Rules:112 Created:2026-10-01 02:55 Publisher:OriginVorfeed
+#!desc=Rules:112 Created:2026-10-02 02:58 Publisher:OriginVorfeed
 [Rule]
 DOMAIN-SUFFIX,265.com,DIRECT
 DOMAIN-SUFFIX,2mdn-cn.net,DIRECT
